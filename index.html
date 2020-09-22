@@ -6,6 +6,7 @@
     <title>timezone-converter-js</title>
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="shortcut icon" href="./favicon.ico">
+    <script src="./src/country-codes.js"></script>
     <script src="./src/moment.js"></script>
     <script src="./src/moment-timezone.js"></script>
     <script src="./src/Now.js"></script>
@@ -13,12 +14,12 @@
     <script defer src="./src/index.js"></script>
   </head>
   <body>
-    <main class="body-outer">
-      <div class="body-inner">
-        <h1>timezone-converter-js</h1>
-        <h2>HAPPY HACKING!</h2>
-        <p>Counter: <span id="output">0</span></p>
+    <main class="converter">
+      <div class="selector"></div>
+      <div class="zones">
         <button id="increment-button">Increment</button>
+        <p class="root-time"></p>
+        <input type="range" min="1" max="3000" value="100" class="slider" id="stepDelay">
         <p class="user-time"></p>
         <p class="other-time"></p>
       </div>

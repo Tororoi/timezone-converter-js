@@ -5,7 +5,7 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
-.body-outer {
+.converter {
   display: inline-block;
   background: #02ed9d;
   background: linear-gradient(180deg, #02ed9d, #009be2);
@@ -13,7 +13,7 @@
   margin: 20px;
 }
 
-.body-inner {
+.zones {
   display: inline-block;
   padding: 10px 20px;
   min-width: 300px;

@@ -4,7 +4,13 @@ class Then {
         Then.all.push(this);
     }
 
-    get zoneObj() {return moment.tz(userNow.format, this.location);}
+    get zoneObj() {return moment.tz(root.format, this.location);}
+    get country() {return getCountryName(this.zoneObj._z.countries()[0])}
+    get city() {
+        let rx = /([^/]+$)/g;
+        let city = this.zoneObj._z.name.match(rx)[0];
+        return city.replace("_", " ");
+    }
     get utc() {return this.zoneObj.utc();}
     get yyyy() {return this.utc.year();}
     get mm() {

@@ -1,6 +1,14 @@
 class Now {
     constructor() {
     }
+    get location() {return moment.tz.guess(true);}
+    get zoneObj() {return moment.tz.zone(this.location);}
+    get country() {return getCountryName(this.zoneObj.countries()[0])}
+    get city() {
+        let rx = /([^/]+$)/g;
+        let city = this.zoneObj.name.match(rx)[0];
+        return city.replace("_", " ");
+    }
     get date() {return new Date();}
     get yyyy() {return this.date.getFullYear();}
     get mm() {
